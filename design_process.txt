@@ -1,0 +1,15 @@
+I'm a few pages into tAoCP by Knuth and he uses an arrow to signify assignment, and a plain equals to signify an equality test. If I were ever to design a programming language, I might follow suit, using "<-" or "<=" to signify assigning what's on the right to the variable on the left. 
+
+200116 - I would like to keep this language as minimalistic as possible (no syntactic sugar), and as C-like as possible without it being just a lesser version and not truly my own. To start on the core attributes, I think implementing a stack is key. I don't know about a heap, don't really know enough about them to understand whether it is necessary. Assigning memory space to variables is another important aspect - I think I will have the user specify how many bytes they want.
+ - Bitwise operations
+ - Manually assigning an address (pointers?)
+ - arrays
+ - for and while loops
+ - if statement
+ - functions!
+ - algebraic operations (duh), maybe I will only allow operations which have a direct interpretation on the 6502
+
+Oh, did I mention yet that my plan is for this to target the 6502 architecture?? Anyway, here's a resource I found that looks good: https://norasandler.com/2017/11/29/Write-a-Compiler.html
+
+200126: I've been reading a bit more about C and how arrays, functions, and pointers work with the hardware itself. Passing a variable to a function must push a new instance of that variable to the stack which is used for modifications, because the variable itself is left untouched. I think it would make it easier if functions in my language can only be passed pointers, but idk, it doesn't seem that hard to push everything to the stack.
+Another idea I had was to have my compiler create a document that shows the mapping of variables onto memory
